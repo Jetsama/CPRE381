@@ -1,0 +1,68 @@
+-------------------------------------------------------------------------
+-- Westin Chamberlain
+-- Department of Electrical and Computer Engineering
+-- Iowa State University
+-------------------------------------------------------------------------
+
+
+-- control.vhd
+-------------------------------------------------------------------------
+-- DESCRIPTION: 
+--
+-- NOTES:
+-------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.std_logic_1164.all; --000000000000 jumpR 1, ALUSrc 1, ALUOp 4, MemtoReg 1, MemWr 1, RegWr 1, RegDst 1, Ext 1, Branch 1, Jump 1 
+
+entity control is
+  port(i_O         : in std_logic_vector(5 downto 0); --OPCODE
+       i_F         : in std_logic_vector(5 downto 0); --Function
+       o_O          : out std_logic_vector(12 downto 0));
+
+end control;
+
+architecture structural of control is
+
+signal s_Control : std_logic_vector(12 downto 0); --12 Total Bits
+
+
+begin
+with i_F select s_Control <=
+		"0000100011000" when "100000", --add  ALUOP: 0010
+                "0000000011000" when "100001", --addu        0000 
+	        "0001010011000" when "100100", --and         0101
+                "0001110011000" when "100110", --xor         0111
+		"0001100011000" when "100101", --or          0110
+                "0000110011000" when "101010", --slt         0011
+	        "0010010011000" when "000000", --sll         1001
+                "0010100011000" when "000010", --srl         1010
+		"0011110011000" when "000011", --sra         1011
+                "0000010011000" when "100010", --sub         0001
+		"0011010011000" when "100011", --subu        1101
+	        "1000000000101" when "001000", --jr          0000
+                "0010110011000" when "100111", --nor         1011
+		"0000000000000" when others;
+
+with i_O select o_O <=
+		s_Control when "000000",
+		"0100100010100" when "001000", --addi        0010
+                "0100000010100" when "001001", --addiu       0000
+		"0101010010000" when "001100", --andi        0101
+                "0111100010000" when "001111", --lui         1110
+		"0100110010100" when "001010", --slti        0011
+                "0101110010000" when "001110", --xori        0111
+		"0101100010000" when "001101", --ori         0110
+                "0100001010100" when "100011", --lw          0000
+                "0100000100100" when "101011", --sw          0000
+		"0110000010100" when "111111", --repl.qb     1000	--not sure, may want to double check (also don't know the correct op code)
+		"0011010000110" when "000100", --beq         0001
+                "0011010000110" when "000101", --bne         0001
+		
+		"0000000000001" when "000010", --j           0000
+                "0000000011001" when "000011", --jal         0000
+		"0000000000000" when others;
+		--"000000000000" when (i_O = "000000") else --not //TODO
+       
+  
+end structural;

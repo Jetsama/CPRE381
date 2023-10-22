@@ -1,0 +1,34 @@
+------------------------------------------------------------------------
+-- Hazard_Detector.vhd
+------------------------------------------------------------------------
+-- DESCRIPTION: This file contains a Hazard Detector
+------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity Hazard_Detector is
+ Port (    IDEX_MRead	 	: in  STD_LOGIC;
+           IDEX_Rt 		: in  STD_LOGIC_VECTOR (4 downto 0);
+           IFID_Rs 		: in  STD_LOGIC_VECTOR (4 downto 0);
+           IFID_Rt 		: in  STD_LOGIC_VECTOR (4 downto 0);
+	   PCWrite 		: out  STD_LOGIC;
+           IFID_Write 		: out  STD_LOGIC;
+           Control	 	: out  STD_LOGIC);
+end Hazard_Detector;
+
+architecture Behavioral of Hazard_Detector is
+begin
+process(IDEX_MRead,IDEX_Rt,IFID_Rs,IFID_Rt)
+begin
+	If ((IDEX_MRead = '1') AND ((IDEX_Rt = IFID_Rs) OR (IDEX_Rt = IFID_Rt))) then
+		PCWrite <= '0';
+		IFID_Write <= '0';
+		Control <= '0';
+	else
+		PCWrite <= '1';
+		IFID_Write <= '1';
+		Control <= '1';		
+	end if;
+end process;
+end Behavioral;

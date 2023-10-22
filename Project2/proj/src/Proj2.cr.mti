@@ -1,0 +1,36 @@
+/home/jehess/cpre381/Project2/proj/src/IFIDMEM.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Project2/proj/src/IFIDMEM.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IFIDMem
+-- Compiling architecture structural of IFIDMem
+
+} {} {}} /home/jehess/cpre381/Project2/proj/src/MEMWBMem.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Project2/proj/src/MEMWBMem.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity MEMWBMem
+-- Compiling architecture structural of MEMWBMem
+** Error (suppressible): /home/jehess/cpre381/Project2/proj/src/MEMWBMem.vhd(30): (vcom-1272) Length of formal "i_D" is 32; length of actual is 13.
+** Error (suppressible): /home/jehess/cpre381/Project2/proj/src/MEMWBMem.vhd(31): (vcom-1272) Length of formal "o_Q" is 32; length of actual is 13.
+** Note: /home/jehess/cpre381/Project2/proj/src/MEMWBMem.vhd(33): VHDL Compiler exiting
+
+} {} {}} /home/jehess/cpre381/Project2/proj/src/IDEXMEM.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Project2/proj/src/IDEXMEM.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IDEXMem
+-- Compiling architecture structural of IDEXMem
+** Warning: /home/jehess/cpre381/Project2/proj/src/IDEXMEM.vhd(26): (vcom-1624) Component instance IDEXMem(structural).ControlREG has a generic map clause and the component dffg_N has no generics.
+Generic map will be ignored.
+** Error (suppressible): /home/jehess/cpre381/Project2/proj/src/IDEXMEM.vhd(31): (vcom-1272) Length of formal "i_D" is 32; length of actual is 13.
+** Error (suppressible): /home/jehess/cpre381/Project2/proj/src/IDEXMEM.vhd(32): (vcom-1272) Length of formal "o_Q" is 32; length of actual is 13.
+** Note: /home/jehess/cpre381/Project2/proj/src/IDEXMEM.vhd(34): VHDL Compiler exiting
+
+} {} {}}

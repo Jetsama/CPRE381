@@ -1,0 +1,545 @@
+-------------------------------------------------------------------------
+-- Henry Duwe
+-- Department of Electrical and Computer Engineering
+-- Iowa State University
+-------------------------------------------------------------------------
+
+
+-- MIPS_Processor.vhd
+-------------------------------------------------------------------------
+-- DESCRIPTION: This file contains a skeleton of a MIPS_Processor  
+-- implementation.
+
+-- 01/29/2019 by H3::Design created.
+-------------------------------------------------------------------------
+--PC must start at 0x 0040 0000 and is a register
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all;
+
+library work;
+use work.MIPS_types.all;
+use IEEE.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+entity MIPS_Processor is
+  generic(N : integer := DATA_WIDTH);
+  port(iCLK            : in std_logic;
+       iRST            : in std_logic;
+       iInstLd         : in std_logic;
+       iInstAddr       : in std_logic_vector(N-1 downto 0);
+       iInstExt        : in std_logic_vector(N-1 downto 0);
+       oALUOut         : out std_logic_vector(N-1 downto 0)); -- TODO: Hook this up to the output of the ALU. It is important for synthesis that you have this output that can effectively be impacted by all other components so they are not optimized away.
+
+end  MIPS_Processor;
+
+
+architecture structure of MIPS_Processor is
+
+  -- Required data memory signals
+  signal s_DMemWr       : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
+  signal s_DMemAddr     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory address input
+  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
+  signal s_DMemOut      : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the data memory output
+ 
+  -- Required register file signals 
+  signal s_RegWr        : std_logic; -- TODO: use this signal as the final active high write enable input to the register file
+  signal s_RegWrAddr    : std_logic_vector(4 downto 0); -- TODO: use this signal as the final destination register address input
+    signal s_RegWrAddrJump    : std_logic_vector(4 downto 0);
+signal s_RegWrData    : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
+signal s_RegWrDataJump    : std_logic_vector(N-1 downto 0);
+signal regjumpwrite : std_logic_vector(N-1 downto 0);
+  -- Required instruction memory signals
+  signal s_IMemAddr     : std_logic_vector(N-1 downto 0); -- Do not assign this signal, assign to s_NextInstAddr instead
+  signal s_NextInstAddr : std_logic_vector(N-1 downto 0); -- TODO: use this signal as your intended final instruction memory address input.
+  signal s_Inst         : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the instruction signal 
+
+  -- Required halt signal -- for simulation
+  signal s_Halt         : std_logic;  -- TODO: this signal indicates to the simulation that intended program execution has completed. (Opcode: 01 0100)
+
+  -- Required overflow signal -- for overflow exception detection
+  signal s_Ovfl         : std_logic;  -- TODO: this signal indicates an overflow exception would have been initiated
+
+  --Additional Signals
+
+  --Register Outputs
+  signal s_RegOut1      : std_logic_vector(N-1 downto 0); --Signal for Register Out connected to ALU
+  signal s_RegOut2      : std_logic_vector(N-1 downto 0); --Signal for Register Out connected to MUX with Sign Extender
+
+  --Control Signals
+  signal s_Control      : std_logic_vector(N-1 downto 0); --Signal array for the control signals
+
+  --Extender Signals
+  signal s_ExtOut       : std_logic_vector(N-1 downto 0); --Signal for Extender Output connected to Mux with RegOut2
+ 
+  --New ALU Signals
+  signal s_ALUIn        : std_logic_vector(N-1 downto 0); --Signal for the second input of new ALU, first signal is RegOut1
+  signal s_ALUZero      : std_logic; --Signal for ALU Zero
+  signal s_ALUCarry     : std_logic; --Signal for ALU Carry out
+
+  --PC Signals
+  signal s_PCBranchMux        : std_logic_vector(N-1 downto 0);
+  signal s_PCJumpMux        : std_logic_vector(N-1 downto 0);
+  signal s_PCJumpReturnMux        : std_logic_vector(N-1 downto 0);
+  signal s_PCBranchIs      : std_logic;
+  signal s_PCBranchD0      : std_logic_vector(N-1 downto 0);
+  signal s_PCBranchD1      : std_logic_vector(N-1 downto 0);
+  signal s_PCBranchD1P1	   : std_logic_vector(N-1 downto 0);
+  signal s_PCJumpD0 : std_logic_vector(N-1 downto 0);
+  signal s_PCJumpD1 : std_logic_vector(N-1 downto 0);
+  signal s_PCWE : std_logic := '0'; 
+
+  --IFStage Signals
+  signal s_instruction	: std_logic_vector(N-1 downto 0);
+  signal s_memAddress	: std_logic_vector(N-1 downto 0);
+  signal s_NextInstAddress : std_logic_vector(N-1 downto 0);
+  --IDStage Signals
+  signal s_ExRegOut1 : std_logic_vector(N-1 downto 0);
+  signal s_ExRegOut2 : std_logic_vector(N-1 downto 0);
+  signal s_ExExtOut : std_logic_vector(N-1 downto 0);
+  signal s_ExControl : std_logic_vector(N-1 downto 0);
+  signal s_ExInstruction : std_logic_vector(N-1 downto 0);
+  signal s_EXNextInstAddr : std_logic_vector(N-1 downto 0);
+  signal s_ExDMemData : std_logic_vector(N-1 downto 0);
+  signal s_ExMemAddress : std_logic_vector(N-1 downto 0);
+  
+  --EXStage Signals
+  signal s_MemALUOut	:  std_logic_vector(N-1 downto 0);
+  signal s_MemNextInstAddr :  std_logic_vector(N-1 downto 0);
+  signal s_MemControl	:  std_logic_vector(N-1 downto 0);
+  signal s_MemDMemData	:  std_logic_vector(N-1 downto 0);
+  signal s_MemInstruction : std_logic_vector(N-1 downto 0);
+  --MEMStage Signals
+  signal s_WBControl :  std_logic_vector(N-1 downto 0);
+  signal s_WBDMemOut    : std_logic_vector(N-1 downto 0);
+  signal s_WBNextInstAddr: std_logic_vector(N-1 downto 0);
+  signal s_WBALUOut : std_logic_vector(N-1 downto 0);
+ 
+--HAZARD
+ signal s_Reg1Haz      : std_logic;
+ signal s_Reg2Haz      : std_logic;
+ signal s_reg1HazData  : std_logic_vector(N-1 downto 0);
+ signal s_reg2HazData  : std_logic_vector(N-1 downto 0);
+ signal s_reg1HazMemData  : std_logic_vector(N-1 downto 0);
+ signal s_reg2HazMemData  : std_logic_vector(N-1 downto 0);
+--Hazard Detector
+ signal s_hazControl	:std_logic;
+ signal s_PCWrite	:std_logic;
+ signal s_IFIDWrite	:std_logic;
+
+  component mem is
+    generic(ADDR_WIDTH : integer;
+            DATA_WIDTH : integer);
+    port(
+          clk          : in std_logic;
+          addr         : in std_logic_vector((ADDR_WIDTH-1) downto 0);
+          data         : in std_logic_vector((DATA_WIDTH-1) downto 0);
+          we           : in std_logic := '1';
+          q            : out std_logic_vector((DATA_WIDTH -1) downto 0));
+    end component;
+
+  -- TODO: You may add any additional signals or components your implementation 
+  --       requires below this comment
+
+  component control is
+    port(i_O         : in std_logic_vector(5 downto 0); --OPCODE
+         i_F         : in std_logic_vector(5 downto 0); --Function
+         o_O         : out std_logic_vector(12 downto 0));
+    end component;
+
+  component regFile is
+    port(i_CLK         : in std_logic;     -- Clock input
+         i_RST         : in std_logic; --Reset all Registers
+         i_rD          : in std_logic_vector(4 downto 0); --Write Select
+         i_wE          : in std_logic; --Write Enable
+         i_rS          : in std_logic_vector(4 downto 0); --Read Select
+         i_rT          : in std_logic_vector(4 downto 0); --Read Select
+         i_Di          : in std_logic_vector(N-1 downto 0); --rD input  
+         o_rS          : out std_logic_vector(N-1 downto 0);    --rS output       
+         o_rT          : out std_logic_vector(N-1 downto 0));   --rT output
+    end component;
+
+  component mux2t1 is
+    port(i_S          : in std_logic;
+         i_D0         : in std_logic;
+         i_D1         : in std_logic;
+         o_O          : out std_logic);
+    end component;
+
+  component extender is
+    port(i_D          : in std_logic_vector(15 downto 0);     -- Data value input
+         i_S          : in std_logic; --Sign Extender Select
+         o_Q          : out std_logic_vector(N-1 downto 0));   -- Data value output
+    end component;
+
+  component pc is
+    port(i_CLK        : in std_logic;     -- Clock input
+         i_RST        : in std_logic;     -- Reset input
+         i_WE         : in std_logic;     -- Write enable input
+         i_D          : in std_logic_vector(N-1 downto 0);     -- Data value input
+         o_Q          : out std_logic_vector(N-1 downto 0));   -- Data value output
+    end component;
+
+  component barrel_shifter is
+    port(i_d		: in STD_LOGIC_VECTOR(31 downto 0);
+	 i_sra		: in STD_LOGIC;
+	 i_shamt	: in STD_LOGIC_VECTOR(4 downto 0);
+	 i_shLeft	: in STD_LOGIC;
+	 o_o		: out STD_LOGIC_VECTOR(31 downto 0));
+    end component;
+
+  component adderSubtractor is
+    port(nAdd_Sub          : in std_logic;
+         i_A         : in std_logic_vector(N-1 downto 0);
+         i_B         : in std_logic_vector(N-1 downto 0);
+         o_CO        : out std_logic;
+         o_O          : out std_logic_vector(N-1 downto 0));
+    end component;
+
+component mux2t1_N is
+  generic(N : integer := 32); -- Generic of type integer for input/output data width. Default value is 32.
+  port(i_S          : in std_logic;
+       i_D0         : in std_logic_vector(N-1 downto 0);
+       i_D1         : in std_logic_vector(N-1 downto 0);
+       o_0          : out std_logic_vector(N-1 downto 0));
+
+end component;
+
+  component newALU is
+    port(i_A          : in std_logic_vector(N-1 downto 0);
+         i_B          : in std_logic_vector(N-1 downto 0);
+         i_ALUOp      : in std_logic_vector(3 downto 0);
+	 i_sa : in std_logic_vector(4 downto 0);
+         o_CO         : out std_logic;
+         o_O          : out std_logic;
+         o_Z          : out std_logic;
+         o_F          : out std_logic_vector(N-1 downto 0));
+    end component;
+
+    component MEMStage is
+	port (i_CLK			: in std_logic;
+	i_RST			: in std_logic;
+	i_WE			: in std_logic; --used for stalling in the future?
+	iMemOut           	: in std_logic_vector(N-1 downto 0);
+	iALUOut           	: in std_logic_vector(N-1 downto 0);
+	iControl          	: in std_logic_vector(N-1 downto 0);
+	iNextInstAddr           : in std_logic_vector(N-1 downto 0);
+
+	oMemOut            	: out std_logic_vector(N-1 downto 0);
+	oALUOut            	: out std_logic_vector(N-1 downto 0);
+	oControl            	: out std_logic_vector(N-1 downto 0);
+	oNextInstAddr           : out std_logic_vector(N-1 downto 0));
+    end component;
+
+    component EXStage is
+    port (i_CLK		: in std_logic; 
+    	i_RST 		: in std_logic; 
+	i_WE 		: in std_logic; 
+	iALUOut		: in std_logic_vector(N-1 downto 0);
+	iDMemData	: in std_logic_vector(N-1 downto 0);
+	iControl	: in std_logic_vector(N-1 downto 0);
+	iNextInstAddr	: in std_logic_vector(N-1 downto 0);
+	iInstruction		: in std_logic_vector(N-1 downto 0);
+	oInstruction  		: out std_logic_vector(N-1 downto 0);
+	oNextInstAddr	: out std_logic_vector(N-1 downto 0);
+	oControl	: out std_logic_vector(N-1 downto 0);
+	oALUOut		: out std_logic_vector(N-1 downto 0);
+	oDMemData	: out std_logic_vector(N-1 downto 0));
+    end component;
+
+    component IDStage is
+    port (i_CLK			: in std_logic;
+	i_RST			: in std_logic;
+	i_WE			: in std_logic; --used for stalling in the future?
+	iNextInstAddr		: in std_logic_vector(N-1 downto 0);
+	iRegout1 		: in std_logic_vector(N-1 downto 0);
+	iRegout2 		: in std_logic_vector(N-1 downto 0);
+	iExtender 		: in std_logic_vector(N-1 downto 0);
+	iInstruction 		: in std_logic_vector(N-1 downto 0);
+	iControl		: in std_logic_vector(N-1 downto 0);
+	iDMemData		: in std_logic_vector(N-1 downto 0);
+	iMemAddr		: in std_logic_vector(N-1 downto 0);
+	oMemAddr 		: out std_logic_vector(N-1 downto 0);
+	oInstruction 		: out std_logic_vector(N-1 downto 0);
+	oNextInstAddr		: out std_logic_vector(N-1 downto 0);
+	oRegout1 		: out std_logic_vector(N-1 downto 0);
+	oRegout2 		: out std_logic_vector(N-1 downto 0);
+	oExtender 		: out std_logic_vector(N-1 downto 0);
+	oControl		: out std_logic_vector(N-1 downto 0);
+	oDMemData		: out std_logic_vector(N-1 downto 0));
+    end component;
+
+    component IFStage is
+    port (i_CLK			: in std_logic;
+	i_RST			: in std_logic;
+	i_WE			: in std_logic; --used for stalling in the future?
+	iInstruction            : in std_logic_vector(N-1 downto 0);
+	iMemAddr		: in std_logic_vector(N-1 downto 0);
+	iNextInstAddress        : in std_logic_vector(N-1 downto 0);
+	oNextInstAddress        : out std_logic_vector(N-1 downto 0);
+	oInstruction            : out std_logic_vector(N-1 downto 0);
+	oMemAddr		: out std_logic_vector(N-1 downto 0));
+    end component;
+
+component ForwardingUnit is
+  generic(N : integer := 32);
+  port (i_RegWr			: in std_logic_vector(4 downto 0);
+	i_ExReg1		: in std_logic_vector(4 downto 0);
+	i_ExReg2		: in std_logic_vector(4 downto 0);
+	o_reg1Haz		: out std_logic;
+	o_reg2Haz		: out std_logic);
+end  component;
+
+component Hazard_Detector is
+	port(   IDEX_MRead	 	: in  STD_LOGIC;
+           	IDEX_Rt 		: in  STD_LOGIC_VECTOR (4 downto 0);
+           	IFID_Rs 		: in  STD_LOGIC_VECTOR (4 downto 0);
+           	IFID_Rt 		: in  STD_LOGIC_VECTOR (4 downto 0);
+	   	PCWrite 		: out  STD_LOGIC;
+           	IFID_Write 		: out  STD_LOGIC;
+           	Control	 		: out  STD_LOGIC);
+end component;
+begin
+
+  -- IF STAGE
+with iInstLd select
+    s_IMemAddr <= s_NextInstAddr when '0',
+      iInstAddr when others;
+
+
+  IMem: mem
+    generic map(ADDR_WIDTH => 19,
+                DATA_WIDTH => N)
+    port map(clk  => iCLK,
+             addr => s_IMemAddr(20 downto 2),
+             data => iInstExt,
+             we   => iInstLd,
+             q    => s_Inst);
+
+
+  PCount: pc
+    port map(i_CLK   => iCLK,
+             i_RST   => iRST, --need to implement later
+             i_WE    => s_PCWE,
+             i_D     => s_PCJumpMux, --TODO,
+             o_Q     => s_NextInstAddr);
+  
+  --IF/ID
+    IFID: IFStage
+    port map (	i_CLK		=> iCLK,
+    		i_RST 		=> iRST,
+		i_WE 		=> '1',
+		iNextInstAddress => s_NextInstAddr,
+		iInstruction 	=> s_Inst,
+		iMemAddr	=> s_IMemAddr,
+		oNextInstAddress => s_NextInstAddress,
+		oInstruction 	=> s_Instruction,
+		oMemAddr	=> s_MemAddress);
+	
+  --ID Stage
+  --hazard detector
+  HazardDetector: Hazard_Detector		
+  port map (	IDEX_MRead => s_Excontrol(6),		--memtoreg from ID/EX reg
+           	IDEX_Rt => s_ExInstruction(20 downto 16), --rs from IF/ID reg
+           	IFID_Rs => s_Instruction(25 downto 21), --rt from IF/ID reg
+           	IFID_Rt => s_Instruction(20 downto 16), --rs from IF/ID reg
+	   	PCWrite => s_PCWrite,
+           	IFID_Write => s_IFIDWrite,
+           	Control => s_hazControl);
+  --control
+  InstControl: control
+  port map (i_O   => s_Instruction(31 downto 26), --OPCODE
+       i_F   => s_Instruction(5 downto 0), --Function
+       o_O   => s_Control(12 downto 0));
+  --extender
+  ALUExtender: extender
+    port map(i_D     => s_Instruction(15 downto 0),
+             i_S     => s_Control(2),
+             o_Q     => s_ExtOut);
+  --register file
+  s_DMemData <= s_RegOut2;
+  s_RegWr <= s_MemControl(4);
+  RegDst: mux2t1_N
+    generic map(N =>5)
+    port map(i_S     => s_MemControl(3),
+             i_D0    => s_MemInstruction(20 downto 16),
+             i_D1    => s_MemInstruction(15 downto 11),
+             o_0     => s_RegWrAddrJump);
+RegDstJump: mux2t1_N --added for jump register
+generic map(N =>5)
+    port map(i_S     => s_MemControl(0) and not s_MemControl(12),
+             i_D0    => s_RegWrAddrJump,
+             i_D1    => "11111",
+             o_0     => s_RegWrAddr);
+
+  Registers: regFile
+    port map(i_CLK   => iCLK,
+             i_RST   => iRST,
+             i_rD    => s_RegWrAddr,
+             i_wE    => s_RegWr,
+             i_rS    => s_Instruction(25 downto 21),
+             i_rT    => s_Instruction(20 downto 16),
+             i_Di    => s_RegWrData,
+             o_rS    => s_RegOut1,
+             o_rT    => s_RegOut2);
+  
+
+  -- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
+  --ID/EX
+	IDEX: IDStage
+    port map (	i_CLK		=> iCLK,
+    		i_RST 		=> iRST,
+		i_WE 		=> '1',
+		iInstruction	=> s_Instruction,
+		iRegOut1 	=> s_RegOut1,
+		iRegOut2 	=> s_RegOut2,
+		iExtender 	=> s_ExtOut,
+		iControl	=> s_Control,
+		iDMemData	=> s_DMemData,
+		iNextInstAddr	=> s_NextInstAddress,
+		iMemAddr	=> s_MemAddress,
+		oMemAddr	=> s_ExMemAddress,
+		oInstruction	=> s_ExInstruction,
+		oNextInstAddr	=> s_ExNextInstAddr,
+		oRegOut1 	=> s_ExRegOut1,
+		oRegOut2 	=> s_ExRegOut2,
+		oExtender 	=> s_ExExtOut,
+		oControl	=> s_ExControl,
+		oDMemData 	=> s_ExDMemData);
+
+  --EX Stage
+
+  ALUSrc: mux2t1_N
+    port map(i_S     => s_ExControl(11),
+             i_D0    => s_reg2HazMemData,
+             i_D1    => s_ExExtOut,
+             o_0     => s_ALUIn);
+FU: ForwardingUnit
+    port map(i_RegWr  => s_RegWrAddr,
+	     i_ExReg1  => s_ExInstruction(25 downto 21),
+             i_ExReg2    => s_ExInstruction(20 downto 16),
+             o_reg1Haz    => s_reg1Haz,
+             o_reg2Haz     => s_reg2Haz);
+
+ ALUReg1Haz: mux2t1_N
+    port map(i_S     => s_reg1Haz and not s_ExControl(6),
+             i_D0    => s_ExRegOut1,
+             i_D1    => s_MemALUOut,
+             o_0     => s_reg1HazData);
+ ALUReg2Haz: mux2t1_N
+    port map(i_S     => s_reg2Haz and not s_ExControl(6),
+             i_D0    => s_ExRegOut2,
+             i_D1    => s_DMemOut,
+             o_0     => s_reg2HazData);
+ ALUReg1HazMem: mux2t1_N
+    port map(i_S     => s_reg2Haz and s_ExControl(6),
+             i_D0    => s_reg1HazData,
+             i_D1    => s_DMemOut,
+             o_0     => s_reg1HazMemData);
+ ALUReg2HazMem: mux2t1_N
+    port map(i_S     => s_reg2Haz and s_ExControl(6),
+             i_D0    => s_reg2HazData,
+             i_D1    => s_DMemOut,
+             o_0     => s_reg2HazMemData);
+  ALU: newALU
+    port map(i_A     => s_reg1HazMemData,
+             i_B     => s_ALUIn,
+             i_ALUOp => s_ExControl(10 downto 7),
+  	     i_sa => s_ExInstruction(10 downto 6),
+             o_CO    => s_ALUCarry,
+             o_O     => s_Ovfl,
+             o_Z     => s_ALUZero,
+             o_F     => s_DMemAddr);
+  oALUOut <= s_DMemAddr;
+
+  --branch/jump
+  s_PCBranchIs <= s_ExControl(1) AND ((s_ALUZero AND not s_ExInstruction(26)) OR (NOT s_ALUZero AND s_ExInstruction(26)));	--figure out how to work with the zero flag being in the ex stage
+  s_PCBranchD0 <=  s_IMemAddr + 4;
+--s_PCBranchD1P1(31 downto 2) <= s_ExtOut;
+
+s_PCBranchD1 <= (std_logic_vector( unsigned(s_ExtOut) sll 2 )) + s_ExMemAddress;
+
+BranchMux: mux2t1_N
+    port map(i_S     => s_PCBranchIs,
+             i_D0    => s_PCBranchD0,
+             i_D1    => s_PCBranchD1,
+             o_0     => s_PCBranchMux);
+s_PCJumpD0(31 downto 28) <= "0000";
+s_PCJumpD0(1 downto 0) <= "00";
+s_PCJumpD0(27 downto 2) <=  s_Instruction(25 downto 0) + 4;
+--s_PCJumpD0 <= s_PCBranchD1P1 - 1;
+JumpReturnMux: mux2t1_N
+    port map(i_S     => s_ExControl(12) and not s_ExControl(1),
+             i_D0    =>  s_PCJumpD0,
+             i_D1    => s_RegOut1,
+             o_0     => s_PCJumpReturnMux);
+JumpMux: mux2t1_N
+    port map(i_S     => s_ExControl(0),
+             i_D0    =>  s_PCBranchMux,
+             i_D1    => s_PCJumpReturnMux,
+             o_0     => s_PCJumpMux);
+
+  --EX/MEM
+  EXMEM: EXStage
+    port map (	i_CLK		=> iCLK,
+    		i_RST 		=> iRST,
+		i_WE 		=> '1',
+		iALUOut		=> oALUOut,
+		iDmemData	=> s_ExDMemData,
+		iControl	=> s_ExControl,
+		iNextInstAddr	=> s_ExNextInstAddr,
+		iInstruction	=> s_ExInstruction,
+		oInstruction	=> s_MemInstruction,
+		oNextInstAddr	=> s_MemNextInstAddr,
+		oControl	=> s_MemControl,
+		oALUOut		=> s_MemALUOut,
+		oDMemData	=> s_MemDMemData);
+
+
+  --MEM Stage
+  DMem: mem
+    generic map(ADDR_WIDTH => ADDR_WIDTH,
+                DATA_WIDTH => N)
+    port map(clk  => iCLK,
+             addr => s_WBALUOut(11 downto 2),	--was DMemAddr, which is just set to oALUOut in EX Stage
+             data => s_MemDMemData,
+             we   => s_DMemWr,
+             q    => s_DMemOut);
+  s_DMemWr <= s_WBControl(5);
+  --MEM/WB
+	MemWB: MEMStage
+    port map (	i_CLK		=> iCLK,
+    		i_RST 		=> iRST,
+		i_WE 		=> '1',
+		iMemOut		=> s_DMemOut,
+		iControl	=> s_MemControl,
+		iALUOut		=> s_MemALUOut,
+		iNextInstAddr	=> s_MemNextInstAddr,
+		oNextInstAddr	=> s_WBNextInstAddr,
+		oALUOut		=> s_WBALUOut,
+		oControl	=> s_WBControl,
+		oMemOut		=> s_WBDMemOut);
+  --WB Stage
+  
+
+  -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)
+  -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
+s_Halt <= (not s_ExInstruction(31) and s_ExInstruction(30) and not s_ExInstruction(29) and s_ExInstruction(28) and not s_ExInstruction(27) and not s_ExInstruction(26));	--not sure what stage this goes in
+  -- TODO: Implement the rest of your processor below this comment! 
+
+--s_PCJumpD1 <= s_PCJumpMux or "010000000000000000000000";
+--s_NextInstAddr <= s_PCJumpMux;
+  
+  RegWriteSrc: mux2t1_N
+    port map(i_S     => s_MemControl(6), --COULD BE WRONG
+             i_D0    => s_MemALUOut,		--was DMemAddr, which is just set to oALUOut in EX Stage
+             i_D1    => s_DMemOut,
+             o_0     => s_RegWrDataJump);
+  regjumpwrite <= s_WBNextInstAddr or x"00400000" ;
+  RegWriteSrcJump: mux2t1_N
+    port map(i_S     => s_MemControl(0),
+             i_D0    => s_RegWrDataJump,
+             i_D1    => regjumpwrite + 4,
+             o_0     => s_RegWrData);
+end structure;

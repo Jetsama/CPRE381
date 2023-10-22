@@ -1,0 +1,45 @@
+
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+library work;
+use work.MIPS_types.all;
+
+entity Control is
+  generic(N : integer := DATA_WIDTH);
+  port(Inst 	       : in std_logic_vector(31 downto 26);
+       Func 	       : in std_logic_vector(31 downto 26);
+       RegDst          : out std_logic;
+       Jump            : out std_logic;
+       Branch          : out std_logic;
+       MemRead          : out std_logic;
+       MemtoReg          : out std_logic;
+       MemWrite          : out std_logic;
+       ALUSrc          : out std_logic;
+       RegWrite          : out std_logic); 
+
+end Control;
+
+architecture datapath of Control is
+signal outputs : std_logic_vector(11 downto 0);
+
+begin
+
+ process(Inst, Func)
+	begin
+
+	case Inst is
+	when "000000"=> --r type
+		case Func is
+			when "100000"=> outputs <= "100100000110"; --add
+			when "100001"=> outputs <= "100100000110"; --addu
+		end case;
+	when "001000"=>  outputs <= "";--addi
+	
+
+	end case;
+	end process;
+
+
+end datapath;

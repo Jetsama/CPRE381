@@ -1,0 +1,31 @@
+/home/jehess/cpre381/Project1/MIPS_Processor.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Project1/MIPS_Processor.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package MIPS_types
+-- Compiling entity MIPS_Processor
+-- Compiling architecture structure of MIPS_Processor
+
+} {} {}} /home/jehess/cpre381/Project1/Control.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Project1/Control.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package MIPS_types
+-- Compiling entity Control
+-- Compiling architecture datapath of Control
+** Error (suppressible): /home/jehess/cpre381/Project1/Control.vhd(32): (vcom-1339) Case statement choices cover only 2 out of 531441 cases.
+** Error (suppressible): /home/jehess/cpre381/Project1/Control.vhd(34): (vcom-1339) Case statement choices cover only 2 out of 531441 cases.
+** Note: /home/jehess/cpre381/Project1/Control.vhd(45): VHDL Compiler exiting
+
+} {} {}} /home/jehess/cpre381/Project1/MIPS_types.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Project1/MIPS_types.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package MIPS_types
+-- Compiling package body MIPS_types
+-- Loading package MIPS_types
+
+} {} {}}

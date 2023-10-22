@@ -1,0 +1,96 @@
+-------------------------------------------------------------------------
+-- Joseph Zambreno
+-- Department of Electrical and Computer Engineering
+-- Iowa State University
+-------------------------------------------------------------------------
+
+
+-- barrel_shifter.vhd
+-------------------------------------------------------------------------
+-- DESCRIPTION: This file contains a barrel shifter
+--
+--
+-------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity barrel_shifter is
+  port( i_d		: in STD_LOGIC_VECTOR(31 downto 0);
+	i_sra		: in STD_LOGIC;
+	i_shamt		: in STD_LOGIC_VECTOR(4 downto 0);
+	i_shLeft	: in STD_LOGIC;
+	o_o		: out STD_LOGIC_VECTOR(31 downto 0));
+end barrel_shifter;
+
+architecture structural of barrel_shifter is
+component mux2t1
+port(  i_S          : in std_logic;
+       i_D0         : in std_logic;
+       i_D1         : in std_logic;
+       o_O          : out std_logic);
+end component;
+signal s_firstOutput : std_logic_vector(31 downto 0);
+signal s_secondOutput : std_logic_vector(31 downto 0);
+signal s_thirdOutput : std_logic_vector(31 downto 0);
+signal s_fourthOutput : std_logic_vector(31 downto 0);
+signal s_fifthOutput : std_logic_vector(31 downto 0);
+signal s_firstD1 : std_logic_vector(31 downto 0);
+signal s_secondD1 : std_logic_vector(31 downto 0);
+signal s_thirdD1 : std_logic_vector(31 downto 0);
+signal s_fourthD1 : std_logic_vector(31 downto 0);
+signal s_fifthD1 : std_logic_vector(31 downto 0);
+signal s_d : std_logic_vector(31 downto 0);
+signal s_shbit: std_logic;
+begin
+s_shbit <= i_d(31) when i_sra = '1' else '0';
+--shift by 16 (for first bit)
+FirstBit: for i in 0 to 31 generate
+	s_d(i) <= i_d(i) when i_shLeft = '0' else i_d(31-i);
+	s_firstD1(31-i) <= s_shbit when (i < 16) else i_d(47-i);
+    Mux0: mux2t1 port map(
+        i_S	=> 	i_shamt(4),
+	i_D0	=> 	s_d(31 - i),
+	i_D1	=> 	s_firstD1(31-i),
+	o_O	=> 	s_firstOutput(31 - i));
+  end generate FirstBit;
+--shift by 8 (for second bit)
+SecondBit: for i in 0 to 31 generate
+	s_secondD1(31-i) <= s_shbit when (i < 8) else s_firstOutput(39-i);
+    Mux1: mux2t1 port map(
+        i_S	=> 	i_shamt(3),
+	i_D0	=> 	s_firstOutput(31 - i),
+	i_D1	=> 	s_secondD1(31-i),
+	o_O	=> 	s_secondOutput(31 - i));
+  end generate SecondBit;
+--shift by 4 (for third bit)
+ThirdBit: for i in 0 to 31 generate
+	s_thirdD1(31-i) <= s_shbit when (i < 4) else s_secondOutput(35-i);
+    Mux2: mux2t1 port map(
+        i_S	=> 	i_shamt(2),
+	i_D0	=> 	s_secondOutput(31 - i),
+	i_D1	=> 	s_thirdD1(31-i),
+	o_O	=> 	s_thirdOutput(31 - i));
+  end generate ThirdBit;
+--shift by 2 (for forth bit)
+ForthBit: for i in 0 to 31 generate
+	s_fourthD1(31-i) <= s_shbit when (i < 2) else s_thirdOutput(33-i);
+    Mux3: mux2t1 port map(
+        i_S	=> 	i_shamt(1),
+	i_D0	=> 	s_thirdOutput(31 - i),
+	i_D1	=> 	s_fourthD1(31-i),
+	o_O	=> 	s_fourthOutput(31 - i));
+  end generate ForthBit;
+--shift by 1 (for fifth bit)
+FifthBit: for i in 0 to 31 generate
+	s_fifthD1(31-i) <= s_shbit when (i < 1) else s_fourthOutput(32-i);
+    Mux4: mux2t1 port map(
+        i_S	=> 	i_shamt(0),
+	i_D0	=> 	s_fourthOutput(31 - i),
+	i_D1	=> 	s_fifthD1(31-i),
+	o_O	=> 	s_fifthOutput(31 - i));
+  end generate FifthBit;
+Invert: for i in 0 to 31 generate
+	o_o(i) <= s_fifthOutput(i) when i_shLeft = '0' else s_fifthOutput(31-i);
+  end generate Invert;
+end structural;
