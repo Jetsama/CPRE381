@@ -1,0 +1,312 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/jehess/cpre381/Lab1/AddSub
+T_opt
+!s110 1662778314
+V9FRfi[Ff:VWZbRAk80[KG3
+04 9 10 work add_sub_n structural 1
+=1-0050569b6019-631bfbca-3ee44-7d37
+R0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OL;O;2022.2;75
+Eadd_sub_n
+Z2 w1662778299
+Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 108
+R1
+Z5 8/home/jehess/cpre381/Lab1/AddSub/Add_Sub_N.vhd
+Z6 F/home/jehess/cpre381/Lab1/AddSub/Add_Sub_N.vhd
+l0
+L5 1
+VC?F77LKUYdW2]^hK3iI3m0
+!s100 7I4RGP1]jcM3ZNO6NZ=TL3
+Z7 OL;C;2022.2;75
+32
+Z8 !s110 1662778301
+!i10b 1
+Z9 !s108 1662778301.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/AddSub/Add_Sub_N.vhd|
+Z11 !s107 /home/jehess/cpre381/Lab1/AddSub/Add_Sub_N.vhd|
+!i113 0
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Astructural
+R3
+R4
+DEx4 work 9 add_sub_n 0 22 C?F77LKUYdW2]^hK3iI3m0
+!i122 108
+l51
+L16 54
+Vb9<<14o4LPcaF7U0a6Jlj1
+!s100 =fY;W0L5Eda`IWmgOczAZ2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Eadder
+Z14 w1662770949
+R3
+R4
+!i122 112
+R1
+Z15 8/home/jehess/cpre381/Lab1/Adder/adder.vhd
+Z16 F/home/jehess/cpre381/Lab1/Adder/adder.vhd
+l0
+L6 1
+Vijdffc[5D[PNfmRK`_bz31
+!s100 P_f?i_>THUcgWjgJQFMM62
+R7
+32
+Z17 !s110 1662778302
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/Adder/adder.vhd|
+Z19 !s107 /home/jehess/cpre381/Lab1/Adder/adder.vhd|
+!i113 0
+R12
+R13
+Astructure
+R3
+R4
+DEx4 work 5 adder 0 22 ijdffc[5D[PNfmRK`_bz31
+!i122 112
+l55
+L17 74
+VX9ijJbGXnCaWo0`:AbIWN1
+!s100 Tzk4ZCGZN;f5d8djRdiRN0
+R7
+32
+R17
+!i10b 1
+R9
+R18
+R19
+!i113 0
+R12
+R13
+Eadder_n
+Z20 w1662776969
+R3
+R4
+!i122 113
+R1
+Z21 8/home/jehess/cpre381/Lab1/Adder/adder_N.vhd
+Z22 F/home/jehess/cpre381/Lab1/Adder/adder_N.vhd
+l0
+L5 1
+VGj:m_kbGVJU^g_EVQP53b3
+!s100 C_Bza8AbimE4bhW>Un8N10
+R7
+32
+R17
+!i10b 1
+Z23 !s108 1662778302.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/Adder/adder_N.vhd|
+Z25 !s107 /home/jehess/cpre381/Lab1/Adder/adder_N.vhd|
+!i113 0
+R12
+R13
+Astructural
+R3
+R4
+DEx4 work 7 adder_n 0 22 Gj:m_kbGVJU^g_EVQP53b3
+!i122 113
+l41
+L16 47
+VE1@73@oGH[PLB<:F4dYKg2
+!s100 4l5F9?V8XG_@5k84nCK362
+R7
+32
+R17
+!i10b 1
+R23
+R24
+R25
+!i113 0
+R12
+R13
+Eandg2
+Z26 w1575899276
+R3
+R4
+!i122 109
+R1
+Z27 8/home/jehess/cpre381/Lab1/andg2.vhd
+Z28 F/home/jehess/cpre381/Lab1/andg2.vhd
+l0
+Z29 L23 1
+VK2@W:5Z5b>czig136LL6V0
+!s100 0e<Rg^QbB^Y@JP[zKSc0[3
+R7
+32
+R8
+!i10b 1
+R9
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/andg2.vhd|
+Z31 !s107 /home/jehess/cpre381/Lab1/andg2.vhd|
+!i113 0
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 5 andg2 0 22 K2@W:5Z5b>czig136LL6V0
+!i122 109
+l32
+Z32 L31 6
+VBgA2UBAfeodkZCAi:Kdlj3
+!s100 CbBW?3Q;N[15?`QCEQ<@f2
+R7
+32
+R8
+!i10b 1
+R9
+R30
+R31
+!i113 0
+R12
+R13
+Einvg
+R26
+R3
+R4
+!i122 110
+R1
+Z33 8/home/jehess/cpre381/Lab1/invg.vhd
+Z34 F/home/jehess/cpre381/Lab1/invg.vhd
+l0
+R29
+V;S;=NGHzBV0Ez2f;I26zn2
+!s100 5^0jfQ^dVk:bl_Za_KajG0
+R7
+32
+R8
+!i10b 1
+R9
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/invg.vhd|
+Z36 !s107 /home/jehess/cpre381/Lab1/invg.vhd|
+!i113 0
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 4 invg 0 22 ;S;=NGHzBV0Ez2f;I26zn2
+!i122 110
+l31
+L30 6
+VGmXl]8DWF2e<aE]dkR7_>1
+!s100 Q?`9^ToWC]zk1[=<LdPdE3
+R7
+32
+R8
+!i10b 1
+R9
+R35
+R36
+!i113 0
+R12
+R13
+Eorg2
+R26
+R3
+R4
+!i122 111
+R1
+Z37 8/home/jehess/cpre381/Lab1/org2.vhd
+Z38 F/home/jehess/cpre381/Lab1/org2.vhd
+l0
+R29
+VWT:AVMfUQTLN[=P`_YWal0
+!s100 hJAZ>EB8bm_e<^5IFaP9e1
+R7
+32
+R8
+!i10b 1
+R9
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/org2.vhd|
+Z40 !s107 /home/jehess/cpre381/Lab1/org2.vhd|
+!i113 0
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 4 org2 0 22 WT:AVMfUQTLN[=P`_YWal0
+!i122 111
+l32
+R32
+Vm8NYYlXmEk<mhPGPk8;A<1
+!s100 nma>Pa=mMW`KzzjeW=1[d1
+R7
+32
+R8
+!i10b 1
+R9
+R39
+R40
+!i113 0
+R12
+R13
+Exorg2
+Z41 w1662778027
+R3
+R4
+!i122 114
+R1
+Z42 8/home/jehess/cpre381/Lab1/AddSub/xorg2.vhd
+Z43 F/home/jehess/cpre381/Lab1/AddSub/xorg2.vhd
+l0
+R29
+VcS2l3fan@dfjC^Q`;X2Gm0
+!s100 zGkHVGJ]HQ5RboN2N>KzN1
+R7
+32
+R17
+!i10b 1
+R23
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/AddSub/xorg2.vhd|
+Z45 !s107 /home/jehess/cpre381/Lab1/AddSub/xorg2.vhd|
+!i113 0
+R12
+R13
+Adataflow
+R3
+R4
+DEx4 work 5 xorg2 0 22 cS2l3fan@dfjC^Q`;X2Gm0
+!i122 114
+l32
+R32
+VaV`j?WB7Nc[PRUmJXALDR1
+!s100 2<f]d3XziROLh_[:_6mNg2
+R7
+32
+R17
+!i10b 1
+R23
+R44
+R45
+!i113 0
+R12
+R13

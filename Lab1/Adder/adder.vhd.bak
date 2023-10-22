@@ -1,0 +1,90 @@
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+
+entity adder is
+
+  port(iX 		            : in std_logic;
+       iY 		            : in std_logic;
+       iC 		            : in std_logic;
+	
+       oS 		            : out std_logic;
+       oC 		            : out std_logic);
+
+end adder;
+
+architecture structure of adder is
+  
+  -- Describe the component entities as defined in Adder.vhd, Reg.vhd,
+  -- Multiplier.vhd, RegLd.vhd (not strictly necessary).
+
+component xorg2
+  port(i_A          : in std_logic;
+       i_B          : in std_logic;
+       o_F          : out std_logic);
+  end component; 
+
+ 
+component org2
+
+  port(i_A          : in std_logic;
+       i_B          : in std_logic;
+       o_F          : out std_logic);
+
+end component;
+
+component andg2
+
+  port(i_A          : in std_logic;
+       i_B          : in std_logic;
+       o_F          : out std_logic);
+
+end component;
+
+
+
+
+
+
+  -- Signal to carry the xy and
+  signal s_as_and         : std_logic;
+  -- Signals to carry delayed X
+  signal s_bs_and   : std_logic;
+
+begin
+
+  ---------------------------------------------------------------------------
+  -- Level 0: Conditionally load new W
+  ---------------------------------------------------------------------------
+ g_xy_xor: xorg2
+    port MAP(i_A               => iX,
+             i_B               => iY,
+             o_F               => s_xy_xor);
+ g_xy_and: andg2
+    port MAP(i_A               => iX,
+             i_B               => iY,
+             o_F               => s_xy_and);
+ ---------------------------------------------------------------------------
+  -- Level 2: 
+  ---------------------------------------------------------------------------
+g_xyc_and: andg2
+    port MAP(i_A               => iC,
+             i_B               => s_xy_xor,
+             o_F               => s_xyc_and);
+
+ ---------------------------------------------------------------------------
+  -- Level 3:Final Outputs
+  ---------------------------------------------------------------------------
+g_xyc_xor: xorg2
+    port MAP(i_A               => s_xy_xor,
+             i_B               => iC,
+             o_F               => oS);
+  
+g_xyc_or: org2
+    port MAP(i_A               => s_xyc_and,
+             i_B               => s_xy_and,
+             o_F               => oC);
+
+
+  end structure;

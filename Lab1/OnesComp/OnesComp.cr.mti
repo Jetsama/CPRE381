@@ -1,0 +1,47 @@
+/home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd {0 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+** Warning: /home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd(4): (vcom-1615) Existing entity 'inverter' at /home/jehess/cpre381/Lab1/OnesComp/inverter.vhd(4) will be overwritten.
+-- Compiling entity inverter
+** Error: /home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd(9): Labels do not match: 'inverter' and 'mux2t1'.
+** Note: /home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd(9): VHDL Compiler exiting
+
+} {8.0 9.0} {}} /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+** Warning: /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd(21): (vcom-1615) Existing entity 'onesComp_N' at /home/jehess/cpre381/Lab1/OnesComp/OnesComp.vhd(4) will be overwritten.
+-- Compiling entity onesComp_N
+** Warning: /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd(28): (vcom-1615) Existing architecture 'onesComp_N(structural)' at /home/jehess/cpre381/Lab1/OnesComp/OnesComp.vhd(11) will be overwritten.
+-- Compiling architecture structural of onesComp_N
+
+} {} {}} /home/jehess/cpre381/Lab1/OnesComp/inverter.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/OnesComp/inverter.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity inverter
+-- Compiling architecture dataflow of inverter
+
+} {} {}} /home/jehess/cpre381/Lab1/OnesComp/OnesComp.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/OnesComp/OnesComp.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+** Warning: /home/jehess/cpre381/Lab1/OnesComp/OnesComp.vhd(4): (vcom-1615) Existing entity 'onesComp_N' at /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd(21) will be overwritten.
+-- Compiling entity onesComp_N
+** Warning: /home/jehess/cpre381/Lab1/OnesComp/OnesComp.vhd(11): (vcom-1615) Existing architecture 'onesComp_N(structural)' at /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd(28) will be overwritten.
+-- Compiling architecture structural of onesComp_N
+
+} {} {}} /home/jehess/cpre381/Lab1/OnesComp/invg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/OnesComp/invg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity invg
+-- Compiling architecture dataflow of invg
+
+} {} {}}

@@ -1,0 +1,68 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/jehess/cpre381/Lab2/Extender
+T_opt
+!s110 1664771555
+VgO@3z>Q@hBc2SUCO99iH>1
+04 13 8 work extender16t32 dataflow 1
+=1-0050569b2827-633a65e3-a7390-74fe
+R0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OL;O;2022.2;75
+Eextender16t32
+Z2 w1664771544
+Z3 DPx4 ieee 20 numeric_std_unsigned 0 22 gHGcJ5Q:QS>2UnW3z3:e>0
+Z4 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z5 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z6 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 15
+R1
+Z7 8/home/jehess/cpre381/Lab2/Extender/Extender16t32.vhd
+Z8 F/home/jehess/cpre381/Lab2/Extender/Extender16t32.vhd
+l0
+L6 1
+VCocNWmhfH3mAGEVP0iznW2
+!s100 0XfbN`^4VM5[[>EZPLo9F3
+Z9 OL;C;2022.2;75
+32
+Z10 !s110 1664771546
+!i10b 1
+Z11 !s108 1664771546.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/Extender/Extender16t32.vhd|
+Z13 !s107 /home/jehess/cpre381/Lab2/Extender/Extender16t32.vhd|
+!i113 0
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Adataflow
+R3
+R4
+R5
+R6
+DEx4 work 13 extender16t32 0 22 CocNWmhfH3mAGEVP0iznW2
+!i122 15
+l15
+L14 11
+VVE2eJU?AToSmbFS1e>=a?1
+!s100 o<z573]BF]8NIW@Wj4^^42
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 0
+R14
+R15

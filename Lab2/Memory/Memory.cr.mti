@@ -1,0 +1,20 @@
+/home/jehess/cpre381/Lab2/Memory/mem.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/Memory/mem.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mem
+-- Compiling architecture rtl of mem
+
+} {} {}} /home/jehess/cpre381/Lab2/Memory/tb_dmem.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/Memory/tb_dmem.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Compiling entity tb_dmem
+-- Compiling architecture behavior of tb_dmem
+
+} {} {}}

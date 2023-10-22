@@ -1,0 +1,206 @@
+/home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+** Warning: /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd(21): (vcom-1615) Existing entity 'mux2t1_N' at /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/mux2t1_N.vhd(21) will be overwritten.
+-- Compiling entity mux2t1_N
+** Warning: /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd(30): (vcom-1615) Existing architecture 'mux2t1_N(structural)' at /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/mux2t1_N.vhd(30) will be overwritten.
+-- Compiling architecture structural of mux2t1_N
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/Add_Sub_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/Add_Sub_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Add_Sub_N
+-- Compiling architecture structural of Add_Sub_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Compiling entity tb_dec5t32
+-- Compiling architecture behavior of tb_dec5t32
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/adder.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/adder.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity adder
+-- Compiling architecture structure of adder
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Compiling entity tb_mux32t1
+-- Compiling architecture behavior of tb_mux32t1
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/register_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/register_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_N
+-- Compiling architecture structural of register_N
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/org2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/org2.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity org2
+-- Compiling architecture dataflow of org2
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity dec5t32
+-- Compiling architecture dataflow of dec5t32
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_regFile
+-- Compiling architecture behavior of tb_regFile
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/tb_firstdatapath.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/tb_firstdatapath.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Compiling entity tb_firstdatapath
+-- Compiling architecture behavior of tb_firstdatapath
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mux32t1
+-- Compiling architecture dataflow of mux32t1
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/invg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/invg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity invg
+-- Compiling architecture dataflow of invg
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/adder_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/adder_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity adder_N
+-- Compiling architecture structural of adder_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/regFile.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/regFile.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity regFile
+-- Compiling architecture structural of regFile
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/mux2t1_N.vhd {2 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/mux2t1_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+** Warning: /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/mux2t1_N.vhd(21): (vcom-1615) Existing entity 'mux2t1_N' at /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd(21) will be overwritten.
+-- Compiling entity mux2t1_N
+** Warning: /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/mux2t1_N.vhd(30): (vcom-1615) Existing architecture 'mux2t1_N(structural)' at /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd(30) will be overwritten.
+-- Compiling architecture structural of mux2t1_N
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/firstdatapath.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/firstdatapath.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity firstdatapath
+-- Compiling architecture mixed of firstdatapath
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_register_N
+-- Compiling architecture behavior of tb_register_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mem.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mem.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mem
+-- Compiling architecture rtl of mem
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/dffg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/dffg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity dffg
+-- Compiling architecture mixed of dffg
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux32t1_N
+-- Compiling architecture structural of mux32t1_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2t1
+-- Compiling architecture dataflow of mux2t1
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/xorg2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/xorg2.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity xorg2
+-- Compiling architecture dataflow of xorg2
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_dffg
+-- Compiling architecture behavior of tb_dffg
+
+} {} {}} /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/andg2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/MyFirstMIPSDatapath/andg2.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity andg2
+-- Compiling architecture dataflow of andg2
+
+} {} {}}

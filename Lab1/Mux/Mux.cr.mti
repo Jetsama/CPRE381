@@ -1,0 +1,41 @@
+/home/jehess/cpre381/Lab1/invg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/invg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity invg
+-- Compiling architecture dataflow of invg
+
+} {} {}} /home/jehess/cpre381/Lab1/andg2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/andg2.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity andg2
+-- Compiling architecture dataflow of andg2
+
+} {} {}} /home/jehess/cpre381/Lab1/Mux/mux2t1Dataflow.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/Mux/mux2t1Dataflow.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2t1Dataflow
+-- Compiling architecture dataflow of mux2t1Dataflow
+
+} {} {}} /home/jehess/cpre381/Lab1/org2.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/org2.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity org2
+-- Compiling architecture dataflow of org2
+
+} {} {}} /home/jehess/cpre381/Lab1/Mux/mux2t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab1/Mux/mux2t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2t1
+-- Compiling architecture structure of mux2t1
+
+} {} {}}

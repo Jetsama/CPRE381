@@ -1,0 +1,258 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11e vcom 2022.2 2022.04, Apr 25 2022
+!s11f vlog 2022.2 2022.04, Apr 25 2022
+R0
+R0
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/jehess/cpre381/Lab1/OnesComp
+T_opt
+!s110 1662762994
+V4XTaM^5_c4SfN2_<^:O:B3
+04 10 10 work onescomp_n structural 1
+=1-0050569b6019-631bbff1-d75ad-16cc
+R0
+Z2 !s124 OEM100
+Z3 o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2022.2;75
+R1
+T_opt1
+!s110 1662783729
+VL7aA?b2fMahdXS?HFYIa^0
+04 8 8 work inverter dataflow 1
+=1-0050569b6019-631c10f1-15e3d-1f46
+R0
+R2
+R3
+R4
+n@_opt1
+R5
+T_opt2
+!s110 1662762619
+VC99b?;N8O>XDO3WM<^g540
+04 8 10 work mux2t1_n structural 1
+=1-0050569b6019-631bbe7b-63d3f-1225
+R0
+R2
+R3
+R4
+n@_opt2
+R5
+R1
+Einverter
+Z6 w1662762836
+Z7 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z8 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 51
+R1
+Z9 8/home/jehess/cpre381/Lab1/OnesComp/inverter.vhd
+Z10 F/home/jehess/cpre381/Lab1/OnesComp/inverter.vhd
+l0
+L4 1
+VBDCK>O[]9QYVT]<[>VZM=0
+!s100 VWPKHOS_S=cDQ>K0:;;4H1
+Z11 OL;C;2022.2;75
+32
+Z12 !s110 1662764979
+!i10b 1
+Z13 !s108 1662764979.000000
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/OnesComp/inverter.vhd|
+Z15 !s107 /home/jehess/cpre381/Lab1/OnesComp/inverter.vhd|
+!i113 0
+Z16 o-work work -2002 -explicit
+Z17 tExplicit 1 CvgOpt 0
+Adataflow
+R7
+R8
+DEx4 work 8 inverter 0 22 BDCK>O[]9QYVT]<[>VZM=0
+!i122 51
+l12
+Z18 L11 6
+VVmUETN6<16>Hk_nOjO<Gb2
+!s100 =PD6E9N;nN3`7I:a@LDWN0
+R11
+32
+R12
+!i10b 1
+R13
+R14
+R15
+!i113 0
+R16
+R17
+Einvg
+Z19 w1575899276
+R7
+R8
+!i122 53
+R1
+Z20 8/home/jehess/cpre381/Lab1/OnesComp/invg.vhd
+Z21 F/home/jehess/cpre381/Lab1/OnesComp/invg.vhd
+l0
+L23 1
+V;S;=NGHzBV0Ez2f;I26zn2
+!s100 5^0jfQ^dVk:bl_Za_KajG0
+R11
+32
+R12
+!i10b 1
+R13
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/OnesComp/invg.vhd|
+Z23 !s107 /home/jehess/cpre381/Lab1/OnesComp/invg.vhd|
+!i113 0
+R16
+R17
+Adataflow
+R7
+R8
+DEx4 work 4 invg 0 22 ;S;=NGHzBV0Ez2f;I26zn2
+!i122 53
+l31
+L30 6
+VGmXl]8DWF2e<aE]dkR7_>1
+!s100 Q?`9^ToWC]zk1[=<LdPdE3
+R11
+32
+R12
+!i10b 1
+R13
+R22
+R23
+!i113 0
+R16
+R17
+Emux2t1
+Z24 w1662762290
+R7
+R8
+!i122 26
+R1
+Z25 8/home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd
+Z26 F/home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd
+l0
+L4 1
+VWiL0iDOW<T8[4TCk5UJaR2
+!s100 W8k=K9BkCUS9320MIXZm51
+R11
+32
+Z27 !s110 1662762697
+!i10b 1
+Z28 !s108 1662762697.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd|
+Z30 !s107 /home/jehess/cpre381/Lab1/OnesComp/mux2t1.vhd|
+!i113 0
+R16
+R17
+Adataflow
+R7
+R8
+DEx4 work 6 mux2t1 0 22 WiL0iDOW<T8[4TCk5UJaR2
+!i122 26
+l12
+R18
+V@3UkE=YM1ULST?_KXbh@K2
+!s100 fFoKMEEldJV[YBldG407S0
+R11
+32
+R27
+!i10b 1
+R28
+R29
+R30
+!i113 0
+R16
+R17
+Emux2t1_n
+Z31 w1662762588
+R7
+R8
+!i122 23
+R1
+Z32 8/home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd
+Z33 F/home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd
+l0
+Z34 L21 1
+V06z]M<dSg42kcYGi4oCR71
+!s100 if6C6>2lAalgCla<`HeL_3
+R11
+32
+Z35 !s110 1662762607
+!i10b 1
+Z36 !s108 1662762607.000000
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd|
+Z38 !s107 /home/jehess/cpre381/Lab1/OnesComp/mux2t1_N.vhd|
+!i113 0
+R16
+R17
+Astructural
+R7
+R8
+DEx4 work 8 mux2t1_n 0 22 06z]M<dSg42kcYGi4oCR71
+!i122 23
+l36
+Z39 L28 19
+VS:mjT0je[iRE`CMHFS6Xh3
+!s100 L<Kc58S6335DVOA_ma?eB1
+R11
+32
+R35
+!i10b 1
+R36
+R37
+R38
+!i113 0
+R16
+R17
+Eonescomp_n
+Z40 w1662762905
+R7
+R8
+!i122 52
+R1
+R32
+R33
+l0
+R34
+VKzPlhH`4ZdjCMLX0iT7c^0
+!s100 4bSZ^];OD9Uf1dzUJdA=E3
+R11
+32
+R12
+!i10b 1
+R13
+R37
+R38
+!i113 0
+R16
+R17
+Astructural
+R7
+R8
+DEx4 work 10 onescomp_n 0 22 KzPlhH`4ZdjCMLX0iT7c^0
+!i122 52
+l36
+R39
+VNKnOPP:SJY0A<`MmVf>5J2
+!s100 2ICfGi@GL@9;F<gWhU:KI0
+R11
+32
+R12
+!i10b 1
+R13
+R37
+R38
+!i113 0
+R16
+R17

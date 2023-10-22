@@ -1,0 +1,645 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/jehess/cpre381/Lab2/RegFile
+T_opt
+!s110 1664748029
+VoADcE0E2P_Pa^l383M=XV2
+04 10 8 work tb_regfile behavior 1
+=1-0050569b2827-633a09fc-bed7c-7239
+R0
+Z2 !s124 OEM100
+Z3 o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2022.2;75
+T_opt1
+!s110 1664737636
+VOKNARBkTA7K]0Pa=_k2cD0
+04 10 8 work tb_mux32t1 behavior 1
+=1-0050569b2827-6339e164-b8c1-41a
+R0
+R2
+R3
+R4
+n@_opt1
+R5
+R1
+T_opt2
+!s110 1664746125
+VndW57`zfKiQGlmQPnkVXA1
+04 7 10 work regfile structural 1
+=1-0050569b2827-633a028d-25c04-6745
+R0
+R2
+R3
+R4
+n@_opt2
+R5
+R1
+Edec5t32
+Z6 w1664735297
+Z7 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z8 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z9 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 1469
+R1
+Z10 8/home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd
+Z11 F/home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd
+l0
+L4 1
+V3B<R?T5o4VGdMCXOPCLS@0
+!s100 m8cbcek3V;4D7SFY:_:YT3
+Z12 OL;C;2022.2;75
+32
+Z13 !s110 1664748018
+!i10b 1
+Z14 !s108 1664748018.000000
+Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd|
+Z16 !s107 /home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd|
+!i113 0
+Z17 o-work work -2002 -explicit
+Z18 tExplicit 1 CvgOpt 0
+Adataflow
+R7
+R8
+R9
+DEx4 work 7 dec5t32 0 22 3B<R?T5o4VGdMCXOPCLS@0
+!i122 1469
+l16
+L10 11
+VzdUXke^AXW5<>I2aOPFYX0
+!s100 hdUzUSFSD=fCmUMD`]g;V1
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 0
+R17
+R18
+Edffg
+Z19 w1577987095
+R8
+R9
+!i122 1460
+R1
+Z20 8/home/jehess/cpre381/Lab2/RegFile/dffg.vhd
+Z21 F/home/jehess/cpre381/Lab2/RegFile/dffg.vhd
+l0
+Z22 L23 1
+VU2OFdOXBC@WQEO`_Yk:Vm0
+!s100 FJQDe;FGDG0KnNV;j4DaY2
+R12
+32
+Z23 !s110 1664748017
+!i10b 1
+Z24 !s108 1664748017.000000
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/dffg.vhd|
+Z26 !s107 /home/jehess/cpre381/Lab2/RegFile/dffg.vhd|
+!i113 0
+R17
+R18
+Amixed
+R8
+R9
+DEx4 work 4 dffg 0 22 U2OFdOXBC@WQEO`_Yk:Vm0
+!i122 1460
+l37
+L33 29
+V:O]=50b_BKfMXO?I<Mc2c0
+!s100 GR5ff]ZD1Yiz`>ZFVE>Hg1
+R12
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 0
+R17
+R18
+Emem
+Z27 w1575899277
+R7
+R8
+R9
+!i122 1461
+R1
+Z28 8/home/jehess/cpre381/Lab2/RegFile/mem.vhd
+Z29 F/home/jehess/cpre381/Lab2/RegFile/mem.vhd
+l0
+L8 1
+VP5lnVYcZ<kCkR8[ak5cP[0
+!s100 GF_U?1mjKdlzTC==@Eoi@2
+R12
+32
+R23
+!i10b 1
+R24
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/mem.vhd|
+Z31 !s107 /home/jehess/cpre381/Lab2/RegFile/mem.vhd|
+!i113 0
+R17
+R18
+Artl
+R7
+R8
+R9
+DEx4 work 3 mem 0 22 P5lnVYcZ<kCkR8[ak5cP[0
+!i122 1461
+l37
+L27 24
+V9RGh[Ql=65BAM9Ik:3bQP1
+!s100 h2oZ:n@5VDnM^B7>cA]W22
+R12
+32
+R23
+!i10b 1
+R24
+R30
+R31
+!i113 0
+R17
+R18
+Emux2t1
+Z32 w1662524841
+R8
+R9
+!i122 1463
+R1
+Z33 8/home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd
+Z34 F/home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd
+l0
+L4 1
+V`YmNbM>FegB0Z8QATIP^j2
+!s100 ``o7>Vj9f[OGMXeLBRM8I3
+R12
+32
+R23
+!i10b 1
+R24
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd|
+Z36 !s107 /home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd|
+!i113 0
+R17
+R18
+Adataflow
+R8
+R9
+DEx4 work 6 mux2t1 0 22 `YmNbM>FegB0Z8QATIP^j2
+!i122 1463
+l14
+L13 6
+VAgzFkQeT3UWB=Qed<GFo73
+!s100 ]ddGJaaihbkgl1RilbNF:1
+R12
+32
+R23
+!i10b 1
+R24
+R35
+R36
+!i113 0
+R17
+R18
+Emux2t1_n
+Z37 w1662773346
+R8
+R9
+!i122 1464
+R1
+Z38 8/home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd
+Z39 F/home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd
+l0
+L21 1
+V_HShhGWB3i4L:Tb:ZN4f=3
+!s100 f@JW6YnDL;zoDFK?hK;^L3
+R12
+32
+R23
+!i10b 1
+R24
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd|
+Z41 !s107 /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd|
+!i113 0
+R17
+R18
+Astructural
+R8
+R9
+DEx4 work 8 mux2t1_n 0 22 _HShhGWB3i4L:Tb:ZN4f=3
+!i122 1464
+l42
+L30 24
+V7fn?WHVdma:9GS^MX0K=43
+!s100 RY72IJU@;^gOEN=<NIMJk3
+R12
+32
+R23
+!i10b 1
+R24
+R40
+R41
+!i113 0
+R17
+R18
+Emux32t1
+Z42 w1664737433
+R7
+R8
+R9
+!i122 1467
+R1
+Z43 8/home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd
+Z44 F/home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd
+l0
+L4 1
+VCielMlnN?E6ai2MT<n<4S2
+!s100 AkS7mTM^GYW=RnRo^A2jD0
+R12
+32
+R13
+!i10b 1
+R14
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd|
+Z46 !s107 /home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd|
+!i113 0
+R17
+R18
+Adataflow
+R7
+R8
+R9
+DEx4 work 7 mux32t1 0 22 CielMlnN?E6ai2MT<n<4S2
+!i122 1467
+l16
+L11 10
+V[NiJ5lSoHWPmm>FHP`zDW2
+!s100 3=<3dJ8dIjE2HLlg>cUiG1
+R12
+32
+R13
+!i10b 1
+R14
+R45
+R46
+!i113 0
+R17
+R18
+Emux32t1_n
+Z47 w1664746109
+R8
+R9
+!i122 1468
+R1
+Z48 8/home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd
+Z49 F/home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd
+l0
+L5 1
+V=N_lilFZRj];38A@J<eY_1
+!s100 kN@iV>ZUDEA5iE3ZhY3YO3
+R12
+32
+R13
+!i10b 1
+R14
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd|
+Z51 !s107 /home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd|
+!i113 0
+R17
+R18
+Astructural
+R8
+R9
+DEx4 work 9 mux32t1_n 0 22 =N_lilFZRj];38A@J<eY_1
+!i122 1468
+l24
+L13 37
+VfhDh`iDiXKb>DM^26m@l51
+!s100 S>A^`]Nem=Lo1CHoFPB=X0
+R12
+32
+R13
+!i10b 1
+R14
+R50
+R51
+!i113 0
+R17
+R18
+Eregfile
+Z52 w1664741385
+R8
+R9
+!i122 1465
+R1
+Z53 8/home/jehess/cpre381/Lab2/RegFile/regFile.vhd
+Z54 F/home/jehess/cpre381/Lab2/RegFile/regFile.vhd
+l0
+L5 1
+VF<dI5nQ8ISDm;<6m6_8d>2
+!s100 6GXfIIE2Z`NOZni3;7B5_3
+R12
+32
+R23
+!i10b 1
+R24
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/regFile.vhd|
+Z56 !s107 /home/jehess/cpre381/Lab2/RegFile/regFile.vhd|
+!i113 0
+R17
+R18
+Astructural
+R8
+R9
+DEx4 work 7 regfile 0 22 F<dI5nQ8ISDm;<6m6_8d>2
+!i122 1465
+l54
+L22 59
+Vk=;X3ea5iad[]28RCSW5M0
+!s100 9SH0IOGjYW6WSXgQM1EP21
+R12
+32
+R23
+!i10b 1
+R24
+R55
+R56
+!i113 0
+R17
+R18
+Eregister_n
+Z57 w1664680170
+R8
+R9
+!i122 1459
+R1
+Z58 8/home/jehess/cpre381/Lab2/RegFile/register_N.vhd
+Z59 F/home/jehess/cpre381/Lab2/RegFile/register_N.vhd
+l0
+L5 1
+VA?2SBTh6W5i5P_f5bkckI0
+!s100 `UEg?mcLR=eBED[b]?fOm2
+R12
+32
+R23
+!i10b 1
+R24
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/register_N.vhd|
+Z61 !s107 /home/jehess/cpre381/Lab2/RegFile/register_N.vhd|
+!i113 0
+R17
+R18
+Astructural
+R8
+R9
+DEx4 work 10 register_n 0 22 A?2SBTh6W5i5P_f5bkckI0
+!i122 1459
+l27
+L17 23
+Vh6^JjJD4mUhChQPd1:9OR0
+!s100 klWAC9;D7Tg@CUDWanAFf1
+R12
+32
+R23
+!i10b 1
+R24
+R60
+R61
+!i113 0
+R17
+R18
+Etb_dec5t32
+Z62 w1664735870
+Z63 DPx4 ieee 20 numeric_std_unsigned 0 22 gHGcJ5Q:QS>2UnW3z3:e>0
+R7
+R8
+R9
+!i122 1470
+R1
+Z64 8/home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd
+Z65 F/home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd
+l0
+L7 1
+V[SKIZTP`zITgNo:G0Kf3c1
+!s100 Ha_MdT`BV`6`Ci_LIeded3
+R12
+32
+R13
+!i10b 1
+R14
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd|
+Z67 !s107 /home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd|
+!i113 0
+R17
+R18
+Abehavior
+R63
+R7
+R8
+R9
+DEx4 work 10 tb_dec5t32 0 22 [SKIZTP`zITgNo:G0Kf3c1
+!i122 1470
+l29
+L11 43
+V0PMmh2Oc=OKB^<eLg4D1W1
+!s100 h;D@F5Z43T7lRe08Mdl1W3
+R12
+32
+R13
+!i10b 1
+R14
+R66
+R67
+!i113 0
+R17
+R18
+Etb_dffg
+Z68 w1580338086
+R8
+R9
+!i122 1462
+R1
+Z69 8/home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd
+Z70 F/home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd
+l0
+R22
+VC4e6Jz>IGCn8FPJ7FY2Pi0
+!s100 IGdLK1aaJ6EJ:3F@Z@m7P0
+R12
+32
+R23
+!i10b 1
+R24
+Z71 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd|
+Z72 !s107 /home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd|
+!i113 0
+R17
+R18
+Abehavior
+R8
+R9
+DEx4 work 7 tb_dffg 0 22 C4e6Jz>IGCn8FPJ7FY2Pi0
+!i122 1462
+l45
+L27 75
+V^ACFC_V4KaXL3hn55gb9J3
+!s100 Cb4=g3LoKFCiz2OW:ze9K2
+R12
+32
+R23
+!i10b 1
+R24
+R71
+R72
+!i113 0
+R17
+R18
+Etb_mux32t1
+Z73 w1664737620
+R63
+R7
+R8
+R9
+!i122 1471
+R1
+Z74 8/home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd
+Z75 F/home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd
+l0
+L7 1
+VHAWg=KhKJQAKOMmDNiMGg3
+!s100 X8YffC]9HS=dP3ZT<bd^80
+R12
+32
+R13
+!i10b 1
+R14
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd|
+Z77 !s107 /home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd|
+!i113 0
+R17
+R18
+Abehavior
+R63
+R7
+R8
+R9
+DEx4 work 10 tb_mux32t1 0 22 HAWg=KhKJQAKOMmDNiMGg3
+!i122 1471
+l30
+L11 44
+VPANiLI]NL0jXk3g>Fdj4;2
+!s100 ^B<lMn]CR3e?GTAbR;R042
+R12
+32
+R13
+!i10b 1
+R14
+R76
+R77
+!i113 0
+R17
+R18
+Etb_regfile
+Z78 w1664747999
+R8
+R9
+!i122 1472
+R1
+Z79 8/home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd
+Z80 F/home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd
+l0
+L5 1
+VI5aWf>e4AWN[fWcH2W2b83
+!s100 6ih<Og2R]aHWEQeVR@`@]1
+R12
+32
+R13
+!i10b 1
+R14
+Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd|
+Z82 !s107 /home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd|
+!i113 0
+R17
+R18
+Abehavior
+R8
+R9
+DEx4 work 10 tb_regfile 0 22 I5aWf>e4AWN[fWcH2W2b83
+!i122 1472
+l35
+L9 93
+V`4UCbB@`PAcUK>R7AI]441
+!s100 i_76>I:fj:CD?nQ>bLI^43
+R12
+32
+R13
+!i10b 1
+R14
+R81
+R82
+!i113 0
+R17
+R18
+Etb_register_n
+Z83 w1664741618
+R8
+R9
+!i122 1466
+R1
+Z84 8/home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd
+Z85 F/home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd
+l0
+L5 1
+V0>X=>7N4ozalChi[7;XP<1
+!s100 FebD[GRdf;KBB@M78<@=i1
+R12
+32
+R13
+!i10b 1
+R24
+Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|/home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd|
+Z87 !s107 /home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd|
+!i113 0
+R17
+R18
+Abehavior
+R8
+R9
+DEx4 work 13 tb_register_n 0 22 0>X=>7N4ozalChi[7;XP<1
+!i122 1466
+l29
+L9 77
+VoA@K;WOgkc4i^2laOhR4W0
+!s100 ^=U6>9DTBaXbndQO[Q5i80
+R12
+32
+R13
+!i10b 1
+R24
+R86
+R87
+!i113 0
+R17
+R18

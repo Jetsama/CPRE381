@@ -1,0 +1,249 @@
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.numeric_std_unsigned.all ; 
+
+entity tb_firstdatapath is
+  generic(gCLK_HPER   : time := 50 ns);
+end tb_firstdatapath;
+
+architecture behavior of tb_firstdatapath is
+  
+  -- Calculate the clock period as twice the half-period
+  constant cCLK_PER  : time := gCLK_HPER * 2;
+
+
+	component firstdatapath is
+    port(nAdd_Sub          : in std_logic;
+	ALUSrc :  in std_logic;
+i_CLK         : in std_logic;
+       	i_rs         : in std_logic_vector(5-1 downto 0);
+       	i_rt         : in std_logic_vector(5-1 downto 0);
+	i_rd         : in std_logic_vector(5-1 downto 0);
+	i_I          : in std_logic_vector(32-1 downto 0);
+	i_RST : in std_logic;
+	o_REG         : out std_logic_vector((32) -1 downto 0));
+end component;
+
+
+  -- Temporary signals to connect to the dff component.
+  signal s_CLK,s_ALUSrc,s_nAdd_Sub,s_RST  : std_logic;
+	signal s_rt,s_rd,s_rs : std_logic_vector(5-1 downto 0);
+  signal s_I : std_logic_vector(32-1 downto 0);
+	signal s_REG         : std_logic_vector((32) -1 downto 0);
+begin
+
+  DUT: firstdatapath 
+  port map(
+ALUSrc => s_ALUSrc,
+nAdd_Sub => s_nAdd_Sub,
+i_CLK => s_CLK,
+i_RST => s_RST,
+		i_rs => s_rs,
+		i_rt => s_rt,
+		i_rd => s_rd,
+i_I => s_I,
+		o_REG => s_REG);
+
+  -- This process sets the clock value (low for gCLK_HPER, then high
+  -- for gCLK_HPER). Absent a "wait" command, processes restart 
+  -- at the beginning once they have reached the final statement.
+  P_CLK: process
+  begin
+
+
+    s_CLK <= '0';
+    wait for gCLK_HPER;
+    s_CLK <= '1';
+    wait for gCLK_HPER;
+  end process;
+  
+  P_TB: process
+  begin
+s_RST <='1';
+    wait for cCLK_PER;
+s_RST <='0';
+    s_rd <= "00001";
+    s_rs <= "00000";
+    s_rt <= "00001";
+    s_I   <= x"00000001";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER;
+
+    s_rd <= to_std_logic_vector(2,5);
+    s_rs <= "00000";
+    s_rt <= "00001";
+    s_I   <= x"00000002";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER;  
+
+    s_rd <= to_std_logic_vector(3,5);
+    s_rs <= "00000";
+    s_rt <= "00001";
+    s_I   <= x"00000003";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER;  
+
+    s_rd <= to_std_logic_vector(4,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(5,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"00000005";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+    s_rd <= to_std_logic_vector(6,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"00000006";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(7,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"00000007";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(8,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"00000008";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(9,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"00000009";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(10,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(0,5);
+    s_I   <= x"0000000A";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(11,5);
+    s_rs <= to_std_logic_vector(1,5);
+    s_rt <= to_std_logic_vector(2,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(12,5);
+    s_rs <= to_std_logic_vector(11,5);
+    s_rt <= to_std_logic_vector(3,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '1';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(13,5);
+    s_rs <= to_std_logic_vector(12,5);
+    s_rt <= to_std_logic_vector(4,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(14,5);
+    s_rs <= to_std_logic_vector(13,5);
+    s_rt <= to_std_logic_vector(5,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '1';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(15,5);
+    s_rs <= to_std_logic_vector(14,5);
+    s_rt <= to_std_logic_vector(6,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+
+    s_rd <= to_std_logic_vector(16,5);
+    s_rs <= to_std_logic_vector(15,5);
+    s_rt <= to_std_logic_vector(7,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '1';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(17,5);
+    s_rs <= to_std_logic_vector(18,5);
+    s_rt <= to_std_logic_vector(9,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(18,5);
+    s_rs <= to_std_logic_vector(17,5);
+    s_rt <= to_std_logic_vector(9,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+    s_rd <= to_std_logic_vector(19,5);
+    s_rs <= to_std_logic_vector(17,5);
+    s_rt <= to_std_logic_vector(10,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+
+    s_rd <= to_std_logic_vector(20,5);
+    s_rs <= to_std_logic_vector(0,5);
+    s_rt <= to_std_logic_vector(2,5);
+    s_I   <= to_std_logic_vector(35,32);
+    s_nAdd_Sub <= '1';
+    s_ALUSrc <= '1';
+    wait for cCLK_PER; 
+
+    s_rd <= to_std_logic_vector(21,5);
+    s_rs <= to_std_logic_vector(19,5);
+    s_rt <= to_std_logic_vector(20,5);
+    s_I   <= x"00000004";
+    s_nAdd_Sub <= '0';
+    s_ALUSrc <= '0';
+    wait for cCLK_PER; 
+
+
+
+    wait;
+  end process;
+end behavior;

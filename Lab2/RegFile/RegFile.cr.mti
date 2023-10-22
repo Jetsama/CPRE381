@@ -1,0 +1,120 @@
+/home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux2t1_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2t1_N
+-- Compiling architecture structural of mux2t1_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_dec5t32.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Compiling entity tb_dec5t32
+-- Compiling architecture behavior of tb_dec5t32
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_mux32t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Compiling entity tb_mux32t1
+-- Compiling architecture behavior of tb_mux32t1
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/dec5t32.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity dec5t32
+-- Compiling architecture dataflow of dec5t32
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/register_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/register_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register_N
+-- Compiling architecture structural of register_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_regFile.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_regFile
+-- Compiling architecture behavior of tb_regFile
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux32t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mux32t1
+-- Compiling architecture dataflow of mux32t1
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/regFile.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/regFile.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity regFile
+-- Compiling architecture structural of regFile
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_register_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_register_N
+-- Compiling architecture behavior of tb_register_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/dffg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/dffg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity dffg
+-- Compiling architecture mixed of dffg
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mem.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mem.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mem
+-- Compiling architecture rtl of mem
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux32t1_N.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux32t1_N
+-- Compiling architecture structural of mux32t1_N
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/mux2t1.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux2t1
+-- Compiling architecture dataflow of mux2t1
+
+} {} {}} /home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd {1 {vcom -work work -2002 -explicit -vopt -stats=none /home/jehess/cpre381/Lab2/RegFile/tb_dffg.vhd
+QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_dffg
+-- Compiling architecture behavior of tb_dffg
+
+} {} {}}
